@@ -1,0 +1,5 @@
+2. select * from duzatabelka where cena > 32765
+3. select * from duzatabelka where cena between 20000 and 20010 order by kod;
+4. select * from duzatabelka where cena between 20000 and 20010 and id>=20 order by kod limit 10; 
+5. select avg(cena) from duzatabelka;
+6. select * from duzatabelka where cena>16371.3774 and opis="receitei";

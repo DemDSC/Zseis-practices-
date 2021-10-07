@@ -1,0 +1,8 @@
+ALTER TABLE dostawcy ADD PRIMARY KEY(id_dostawcy);
+ALTER TABLE  magazyn ADD PRIMARY KEY(id_towaru);
+ALTER TABLE  towary ADD PRIMARY KEY(id_towaru);
+ALTER TABLE towary MODIFY COLUMN id_towaru  INT (11) AUTO_INCREMENT;
+ALTER TABLE dostawcy MODIFY COLUMN id_dostawcy INT (11) AUTO_INCREMENT;
+CREATE INDEX id_dostawcy ON towary(id_dostawcy);
+ALTER TABLE towary ADD FOREIGN KEY (id_dostawcy) REFERENCES dostawcy(id_dostawcy) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE magazyn ADD FOREIGN KEY (id_towaru) REFERENCES towary(id_towaru) ON DELETE RESTRICT ON UPDATE RESTRICT;
